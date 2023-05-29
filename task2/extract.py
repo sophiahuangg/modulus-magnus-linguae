@@ -12,7 +12,7 @@ def extract_q_and_a(text):
 
 def create_qa_json(questions, answers, pensvmType):
     filename = os.path.join("jsonoutputs", "pensvm" + pensvmType[-1], pensvmType + ".json")
-    print("pensvmType=", pensvmType)
+    print(filename)
     qa_pairs = [{"question": q, "answer": a} for q, a in zip(questions, answers)]
 # Creates a dictionary with key "questions" and value as the list of qa_pairs
     dict_to_dump = {"questions": qa_pairs}
