@@ -1,1 +1,0 @@
-Given a list of questions in Latin, provide a proper response in Latin. Your goal is to comprehend the question and provide a sensible answer. Provide the answer only.
