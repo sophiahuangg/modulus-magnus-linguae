@@ -27,8 +27,7 @@ if not os.path.exists(directory):
 
 # Creates a json file for each chapter
 for chapter in json_objects:
-    name = chapter['name']
-    filename = name.replace(" ", "") + ".json"
+    filename = f"CH_{chapter['id'] + 1}.json"
     filepath = os.path.join(directory, filename)
 
     with open(filepath, 'w') as f:
