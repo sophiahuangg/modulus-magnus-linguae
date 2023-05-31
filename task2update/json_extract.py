@@ -1,5 +1,4 @@
-import re, json, os
-import codecs
+import re, json, os, codecs
 
 file_path = 'quizzes.json'
 
@@ -22,10 +21,16 @@ for match in matches:
     except (json.JSONDecodeError, UnicodeDecodeError):
         pass
 
+directory = "chapterinfo"
+if not os.path.exists(directory):
+    os.makedirs(directory)
+
 # Creates a json file for each chapter
 for chapter in json_objects:
     name = chapter['name']
     filename = name.replace(" ", "") + ".json"
-    with open(filename, 'w') as f:
-        json.dump(chapter, f)
+    filepath = os.path.join(directory, filename)
+
+    with open(filepath, 'w') as f:
+        json.dump(chapter, f, indent=4)
 
