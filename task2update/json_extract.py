@@ -27,6 +27,7 @@ if not os.path.exists(directory):
 
 # Creates a json file for each chapter
 for chapter in json_objects:
+    # Naming as Chapter ID + 1 because ID starts at 0 (i.e. first chapter has id 0, second chapter has id 1, etc.)
     filename = f"CH_{chapter['id'] + 1}.json"
     filepath = os.path.join(directory, filename)
 
