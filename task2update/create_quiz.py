@@ -10,7 +10,7 @@ for chap in chapters:
 
         for exercise in content['exercises']:
             questions = exercise['questions']
-            quiztype = os.path.join('quizstyle', exercise['name'])
+            quiztype = os.path.join('quizstyle', exercise['name'].replace(" ", ""))
 
             if not os.path.exists(quiztype):
                 os.makedirs(quiztype)
